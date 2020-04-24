@@ -3,6 +3,7 @@ import FAChevronDown from 'react-icons/lib/md/keyboard-arrow-down'
 import FAMenu from 'react-icons/lib/fa/list-ul'
 import FASearch from 'react-icons/lib/fa/search'
 import MdEject from 'react-icons/lib/md/eject'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default class SideBar extends Component{
 	constructor(props){
@@ -24,21 +25,6 @@ export default class SideBar extends Component{
 		const { receiver } = this.state
 		return (
 			<div id="side-bar">
-					<div className="heading">
-						<div className="app-name">Chats <FAChevronDown /></div>
-						<div className="menu">
-							<FAMenu />
-						</div>
-					</div>
-					<form onSubmit={this.handleSubmit} className="search">
-						<i className="search-icon"><FASearch /></i>
-						<input
-							placeholder="Search"
-							type="text"
-							value={receiver}
-							onChange={(e)=>{ this.setState({receiver:e.target.value}) }}/>
-						<div className="plus"></div>
-					</form>
 					<div
 						className="users"
 						ref='users'
